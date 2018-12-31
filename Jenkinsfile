@@ -4,9 +4,11 @@ agent any
 
 stages {
 
-stage('Build') {
+stage('Docker Build') {
 steps {
-echo "Building once more"
+echo "Building from Docker file"
+sh "docker build -t react-app/latest ."
+
 }
 }
 
