@@ -5,7 +5,9 @@ agent none
 stages {
 
 stage('Docker Build') {
-agent "Slave-Node"
+agent {
+label "Slave-Node"
+}
 
 steps {
 echo "Building from Docker file"
