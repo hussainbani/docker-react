@@ -4,19 +4,19 @@ agent none
 
 stages {
 
-stage('Docker Build') {
+
+stage('Docker Deployment'){
 agent {
 label "Slave-Node"
 }
 
-steps {
-echo "Building from Docker file"
-sh "docker build -t react-app/latest ."
-
-}
-}
+ansiblePlaybook(
+playbook: 'test.yml'
+inventory: '/etc/ansible/hosts'
+)
 
 }
 
 }
 
+}
