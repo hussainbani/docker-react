@@ -11,7 +11,7 @@ label "Slave-Node"
 }
 
 ansiblePlaybook(
-playbook: 'test.yml'
+playbook: 'test.yml',
 inventory: '/etc/ansible/hosts'
 )
 
