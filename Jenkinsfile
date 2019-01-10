@@ -10,11 +10,13 @@ agent {
 label "Slave-Node"
 }
 
+steps
+{
 ansiblePlaybook(
 playbook: 'test.yml',
 inventory: '/etc/ansible/hosts'
 )
-
+}
 }
 
 }
