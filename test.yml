@@ -1,0 +1,8 @@
+- hosts: ansibleserver
+  user: test
+  sudo: yes
+  gather_facts: yes
+  connection: ssh
+  tasks:
+  - name: test
+    raw: echo "Hello World"
