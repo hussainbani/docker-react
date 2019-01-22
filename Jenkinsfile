@@ -27,10 +27,9 @@ label "Slave-Node"
       step([$class: "RundeckNotifier", 
             includeRundeckLogs: true, 
             jobId: "6a2480fd-002e-4842-a787-408bbe6f1fb4", 
-            rundeckInstance: "Rundeck-Node", 
+            rundeckInstance: "Rundeck Server", 
             shouldFailTheBuild: true, 
-            shouldWaitForRundeckJob: true, 
-            tailLog: true]) 
+            shouldWaitForRundeckJob: true]) 
       } 
     } 
   }
