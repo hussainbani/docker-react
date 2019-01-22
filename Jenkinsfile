@@ -1,5 +1,4 @@
 pipeline {
-
 agent none
 
 stages {
@@ -19,7 +18,6 @@ inventory: '/etc/ansible/hosts'
 }
 }
 
-<<<<<<< HEAD
 stage('Calling Rundeck for Deployment'){
 agent {
 label "Slave-Node"
@@ -41,10 +39,3 @@ label "Slave-Node"
 
 
 }
-
-
-=======
-}
-
-}
->>>>>>> 18eeaceca60b826580497c37a93a4be1c8e16458
