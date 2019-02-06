@@ -11,7 +11,10 @@ label "Slave-Node"
     script { 
       step([$class: "RundeckNotifier", 
             includeRundeckLogs: true, 
-            jobId: "6a2480fd-002e-4842-a787-408bbe6f1fb4", 
+            jobId: "6a2480fd-002e-4842-a787-408bbe6f1fb4",
+	    options: """
+               Build_RD=$BUILD_NUMBER
+               """, 
             rundeckInstance: "Rundeck Server", 
             shouldFailTheBuild: true, 
             shouldWaitForRundeckJob: true]) 
