@@ -12,7 +12,7 @@ class App extends Component {
 <<<<<<< HEAD
             This is new world
 =======
-            This is my world
+            This is in developement
 >>>>>>> 18eeaceca60b826580497c37a93a4be1c8e16458
           </p>
           <a
