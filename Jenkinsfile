@@ -7,7 +7,7 @@ pipeline {
 				echo "${env.WORKSPACE}"
 				echo "/var/lib/jenkins/jobs/${env.JOB_NAME}/branches/${env.BRANCH_NAME}/builds/${env.BUILD_NUMBER}"
 				sh './name.sh'
-				load "${env.WORKSPACE}\\project.properties"
+				load "${env.WORKSPACE}\/project.properties"
 }
 
 }
