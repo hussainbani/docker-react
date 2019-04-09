@@ -12,7 +12,7 @@ pipeline {
 }
 	stage('Creating atificats'){
 		steps {
-			environmentVariables { 
+			environment { 
 					propertiesFile('project.properties')
 										}
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
