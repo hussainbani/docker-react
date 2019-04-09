@@ -5,8 +5,8 @@ pipeline {
 		stage('Calling Rundeck for Deployment') {
 			steps {
 				echo 'hello world'
-				echo env.WORKSPACE
-				echo '/var/lib/jenkins/jobs/env.JOB_NAME/branches/env.BRANCH_NAME/builds/env.JOB_NUMBER'
+				echo $WORKSPACE
+				echo '/var/lib/jenkins/jobs/$JOB_NAME/branches/$BRANCH_NAME/builds/$JOB_NUMBER'
 			}
 		}
 	
