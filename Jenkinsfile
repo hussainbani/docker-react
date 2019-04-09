@@ -7,7 +7,7 @@ pipeline {
 			steps {
 				echo 'hello world'
 				echo "/var/lib/jenkins/jobs/${env.JOB_NAME}/branches/${env.BRANCH_NAME}/builds/${env.BUILD_NUMBER}"
-				ATRIFACT_URL= sh './name.sh'
+				env.ATRIFACT_URL=sh './name.sh'
 }
 
 }
