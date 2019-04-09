@@ -6,11 +6,8 @@ pipeline {
 			steps {
 				echo 'hello world'
 				echo "/var/lib/jenkins/jobs/${env.JOB_NAME}/branches/${env.BRANCH_NAME}/builds/${env.BUILD_NUMBER}"
-				def jobname
-				sh """
-				jobname = $(echo ${env.JOB_NAME} | awk -F [:/] '{ print \$1 }')
+				sh './name.sh'
 
-				"""
 				
 }
 
