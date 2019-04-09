@@ -1,4 +1,3 @@
-def ARTIFACT_URL
 pipeline {
 	agent any;
 
@@ -14,7 +13,7 @@ pipeline {
 	stage('Creating atificats'){
 		steps {
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
-			echo "${ARTIFACT_URL}"
+			echo "${env.ARTIFACT_URL}"
 
 }
 }    
@@ -23,7 +22,7 @@ pipeline {
 		ansiblePlaybook(
 				playbook: 'deploy.yml',
 				inventory: '/etc/ansible/hosts',
-				extraVars: 'artifact=$ARTIFACT_URL'
+				extraVars: 'artifact=${env.ARTIFACT_URL}'
 )
 } 
 }
