@@ -10,11 +10,21 @@ pipeline {
 }
 
 }
-	stage ('Creating atificats'){
+	stage('Creating atificats'){
 		steps {
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
-			echo "${env.ARTIFACT_URL}"
+			echo "${ARTIFACT_URL}"
+
 }
+}    
+        stage('Deployment Through Ansible') {
+            steps {
+		ansiblePlaybook(
+				playbook: 'deploy.yml',
+				inventory: '/etc/ansible/hosts',
+				extraVars: 'artifact=$ARTIFACT_URL'
+)
+} 
 }
 }
 }

@@ -1,0 +1,8 @@
+- hosts: stagingserver
+  user: jenkins
+  sudo: yes
+  connection: ssh
+  gather_facts: yes
+  tasks:
+  - name: yum install
+    yum: name=telnet state=present
