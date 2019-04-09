@@ -1,19 +1,19 @@
 pipeline {
-agent any;
+	agent any;
 
-stages {
-	stage('Calling Rundeck for Deployment'){
-		steps {
-	 		echo 'hello world'
-			echo env.WORKSPACE
+	stages {
+		stage('Calling Rundeck for Deployment') {
+			steps {
+				echo 'hello world'
+				echo env.WORKSPACE
+			}
 		}
-		}
-}
+	
 	stage('Build') {
 		steps {
-		archiveArtifacts artifacts: '*'
-}
-}
+			archiveArtifacts artifacts: '**'
+		}
+	}
 
 }
 }
