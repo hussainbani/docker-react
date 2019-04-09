@@ -2,6 +2,11 @@ pipeline {
 	agent any;
 
 	stages {
+node {
+
+	load "${env.WORKSPACE}/project.properties"
+        echo "${ARTIFACT_URL}"
+
 		stage('Calling Rundeck for Deployment') {
 			steps {
 				echo "${env.WORKSPACE}"
@@ -12,10 +17,7 @@ pipeline {
 }
 	stage('Creating atificats'){
 		steps {
-			node { 
-				load "${env.WORKSPACE}/project.properties"
-				echo "${ARTIFACT_URL}"
-				}						
+										
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
 			echo "${ARTIFACT_URL}"
 
@@ -29,6 +31,7 @@ pipeline {
 				extraVars: 'artifact=${env.ARTIFACT_URL}'
 )
 } 
+}
 }
 }
 }
