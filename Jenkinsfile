@@ -14,7 +14,7 @@ pipeline {
 	stage('Creating atificats'){
 		steps {
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
-			echo "${env.ARTIFACT_URL}"
+			echo "${ARTIFACT_URL}"
 
 }
 }    
