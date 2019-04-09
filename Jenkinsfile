@@ -1,8 +1,8 @@
+def ARTIFACT_URL
 pipeline {
 	agent any;
 
 	stages {
-		def ARTIFACT_URL
 		stage('Calling Rundeck for Deployment') {
 			steps {
 				echo 'hello world'
