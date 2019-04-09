@@ -1,4 +1,3 @@
-def ATRIFACT_URL
 pipeline {
 	agent any;
 
