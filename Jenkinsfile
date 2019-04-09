@@ -7,12 +7,14 @@ pipeline {
 				echo "${env.WORKSPACE}"
 				echo "/var/lib/jenkins/jobs/${env.JOB_NAME}/branches/${env.BRANCH_NAME}/builds/${env.BUILD_NUMBER}"
 				sh './name.sh'
-				load "${env.WORKSPACE}/project.properties"
 }
 
 }
 	stage('Creating atificats'){
 		steps {
+			environmentVariables { 
+					propertiesFile('project.properties')
+										}
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
 			echo "${ARTIFACT_URL}"
 
