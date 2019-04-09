@@ -1,3 +1,4 @@
+def ATRIFACT_URL
 pipeline {
 	agent any;
 
@@ -6,7 +7,7 @@ pipeline {
 			steps {
 				echo 'hello world'
 				echo "/var/lib/jenkins/jobs/${env.JOB_NAME}/branches/${env.BRANCH_NAME}/builds/${env.BUILD_NUMBER}"
-				sh './name.sh'
+				ATRIFACT_URL=${sh './name.sh'}
 }
 
 }
