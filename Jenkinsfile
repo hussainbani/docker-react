@@ -9,5 +9,10 @@ stages {
 		}
 		}
 }
+	stage('Build') {
+		steps {
+		archiveArtifacts artifacts: '*'
+}
+}
 
 }
