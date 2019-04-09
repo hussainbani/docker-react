@@ -2,7 +2,6 @@ pipeline {
 	agent any;
 
 	stages {
-node {
 
 	load "${env.WORKSPACE}/project.properties"
         echo "${ARTIFACT_URL}"
@@ -31,7 +30,6 @@ node {
 				extraVars: 'artifact=${env.ARTIFACT_URL}'
 )
 } 
-}
 }
 }
 }
