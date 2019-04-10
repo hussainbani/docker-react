@@ -26,7 +26,9 @@ pipeline {
 		ansiblePlaybook(
 				playbook: 'deploy.yml',
 				inventory: '/etc/ansible/hosts',
-				extraVars: 'artifact=${ARTIFACT_URL}'
+				extraVars{
+					extraVar("artifact", "${ARTIFACT_URL}", false)
+}
 )
 } 
 }
