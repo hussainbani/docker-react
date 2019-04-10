@@ -8,5 +8,5 @@
   tasks:
   - name: Copy Code to StagingServer
     copy:
-      src: "{{ copy_dest }}"
+      src: {{ copy_dest }}
       dest: /tmp
