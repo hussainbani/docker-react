@@ -24,6 +24,7 @@ pipeline {
         stage('Deployment Through Ansible') {
             steps {
 			load "${env.WORKSPACE}/project.properties"
+			echo "${ARTIFACT_URL}"
 			ansiblePlaybook(
 						playbook: 'deploy.yml',
 						inventory: '/etc/ansible/hosts',
