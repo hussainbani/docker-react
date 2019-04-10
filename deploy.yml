@@ -3,6 +3,7 @@
   sudo: yes
   connection: ssh
   gather_facts: yes
+  vars: "{{ artificat }}"
   tasks:
   - name: yum install
     yum: name=telnet state=present
