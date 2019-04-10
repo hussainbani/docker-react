@@ -3,9 +3,6 @@ pipeline {
 
 	stages {
 
-	load "${env.WORKSPACE}/project.properties"
-        echo "${ARTIFACT_URL}"
-
 		stage('Calling Rundeck for Deployment') {
 			steps {
 				echo "${env.WORKSPACE}"
