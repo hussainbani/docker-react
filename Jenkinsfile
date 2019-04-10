@@ -24,7 +24,7 @@ pipeline {
         stage('Deployment Through Ansible') {
             steps {
 			ansiblePlaybook(
-						playbook: 'test.yml',
+						playbook: 'deploy.yml',
 						inventory: '/etc/ansible/hosts',
 						extras: "--extra-vars 'artifact=${ARTIFACT_URL}'")
 }
