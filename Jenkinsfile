@@ -14,9 +14,11 @@ pipeline {
 
 	stage('Creating atificats'){	
 	steps {	
+		node {
 			load "${env.WORKSPACE}/project.properties"							
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
 			echo "${ARTIFACT_URL}"
+}
 }
 
 }
