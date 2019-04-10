@@ -3,7 +3,8 @@
   sudo: yes
   connection: ssh
   gather_facts: yes
-  vars: "{{ artificat }}"
+  vars: 
+    copy_dest:"{{ artificat }}"
   tasks:
   - name: yum install
     yum: name=telnet state=present
