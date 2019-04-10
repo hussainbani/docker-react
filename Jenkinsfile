@@ -23,13 +23,12 @@ pipeline {
     
         stage('Deployment Through Ansible') {
             steps {
-		ansiblePlaybook(
-				playbook: 'deploy.yml',
-				inventory: '/etc/ansible/hosts',
-				extraVars{
-					extraVar("artifact", "${ARTIFACT_URL}", false)
+		ansiblePlaybook('deploy.yml') {
+						inventoryPath('/etc/ansible/hosts')
+						extraVars {
+							   extraVar("artifact", "${ARTIFACT_URL}", false)
 }
-)
+}
 } 
 }
 }
