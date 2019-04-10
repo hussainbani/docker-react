@@ -4,9 +4,9 @@
   connection: ssh
   gather_facts: yes
   vars: 
-    copy_dest: "{{ artificat }}"
+    copy_dest: "{{ artifact }}"
   tasks:
   - name: Copy Code to StagingServer
     copy:
-      src: {{ copy_dest }}
+      src: "{{ copy_dest }}"
       dest: /tmp
