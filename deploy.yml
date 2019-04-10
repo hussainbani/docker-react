@@ -6,5 +6,7 @@
   vars: 
     copy_dest: "{{ artificat }}"
   tasks:
-  - name: yum install
-    yum: name=telnet state=present
+  - name: Copy Code to StagingServer
+    copy:
+      src: {{ copy_dest }}
+      dest: /tmp
