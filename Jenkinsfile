@@ -17,7 +17,7 @@ pipeline {
 		node {
 			load "${env.WORKSPACE}/project.properties"							
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
-			echo "${ARTIFACT_URL}"
+			echo "${env.ARTIFACT_URL}"
 }
 }
 
