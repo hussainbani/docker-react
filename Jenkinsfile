@@ -15,15 +15,15 @@ pipeline {
 
 }
 
-	stage('Creating atificats'){
-		node {
+	stage('Creating atificats'){	
+	node {
 			load "${env.WORKSPACE}/project.properties"							
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
 			echo "${ARTIFACT_URL}"
 }
 
 }
-}    
+    
         stage('Deployment Through Ansible') {
             steps {
 		ansiblePlaybook(
