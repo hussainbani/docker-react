@@ -26,7 +26,7 @@ pipeline {
 			ansiblePlaybook(
 						playbook: 'test.yml',
 						inventory: '/etc/ansible/hosts',
-						extraVars: "key1", "${ARTIFACT_URL})
+						extras: "--extra-vars 'artifact=${ARTIFACT_URL}'")
 }
 }
 }
