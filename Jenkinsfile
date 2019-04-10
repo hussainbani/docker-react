@@ -16,7 +16,7 @@ pipeline {
 	steps {	
 			load "${env.WORKSPACE}/project.properties"							
 			archiveArtifacts artifacts: '**', onlyIfSuccessful: true
-			echo "${env.ARTIFACT_URL}"
+			echo "${ARTIFACT_URL}"
 }
 
 }
