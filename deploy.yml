@@ -8,6 +8,6 @@
   tasks:
   - name: Copy Code to StagingServer
     synchronize:
-      src: "{{ copy_dest }}/*"
+      src: "{{ copy_dest }}/"
       dest: /tmp
       recursive: yes
