@@ -1,4 +1,4 @@
-- hosts: stagingserver
+- hosts: test
   user: jenkins
   sudo: yes
   connection: ssh
@@ -7,6 +7,7 @@
     copy_dest: "{{ artifact }}"
   tasks:
   - name: Copy Code to StagingServer
-    copy:
-      src: "{{ copy_dest }}"
+    synchronize:
+      src: "{{ copy_dest }}"/*
       dest: /tmp
+      recursive: yes
